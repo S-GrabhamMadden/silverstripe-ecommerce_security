@@ -219,6 +219,7 @@ class OrderStepSecurityCheck extends OrderStep implements OrderStepInterface
                     ];
                 }
             }
+
             if (empty($this->_checkLists)) {
                 $this->_checkLists = $this->Config()->get('checks_required');
             }

@@ -12,6 +12,8 @@ use Sunnysideup\Ecommerce\Model\Process\OrderStep;
  */
 class OrderStepWhitelistCustomer extends OrderStep implements OrderStepInterface
 {
+    private static $table_name = 'OrderStepWhitelistCustomer';
+
     /**
      * The OrderStatusLog that is relevant to the particular step.
      *
@@ -72,6 +74,7 @@ class OrderStepWhitelistCustomer extends OrderStep implements OrderStepInterface
             $log->OrderID = $order->ID;
             $log->write();
         }
+
         $log->assessCustomer();
 
         return true;
